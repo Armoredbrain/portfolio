@@ -1,7 +1,7 @@
 :root {
   font-size: 16px;
   font-family: "Karla";
-  --text-primary: #b6b6b6;
+  --text-primary: #000000;
   --text-secondary: #ececec;
   --bg-white: #000000;
   --bg-primary: #23232e;
@@ -9,63 +9,91 @@
   --transition-speed: 300ms;
 }
 
+.hidden {
+  display: none;
+}
+
 .container {
   background-color: darkblue;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 15rem auto;
+  grid-template-rows: auto auto;
   height: 100vh;
 }
-
 .infoContainer {
   background-color: darkorange;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
   grid-template-rows: auto;
+  padding: 0 0 1rem 0;
 }
-
-.iDPhoto {
-  background-color: yellow;
-  margin: 3rem 2rem 2rem 2rem;
+.idContainer {
+  background-color: darkorange;
+  margin: 3rem 0 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  width: 150px;
+  margin: 3rem 0 1rem 3rem;
 }
-
-.info {
-  background-color: yellow;
-  margin: 2rem;
+.infos {
+  background-color: darkorange;
+  margin: 3rem 2rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
-.projectContainer {
+.namingContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 1rem;
+}
+.infoIconContainer {
+  display: flex;
+  width: auto;
+  margin: 1rem 0 0 1rem;
+}
+#downloadIcon, #githubIcon, #linkedInIcon {
+  height: 50px;
+  width: auto;
+  margin: 0 2.5rem 0 0;
+}
+#projectContainer {
   background-color: darkslategrey;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-row-gap: 2rem;
   padding: 2rem 0;
 }
-
 .project {
   background-color: dodgerblue;
-  height: 20rem;
-  width: auto;
   margin: 0 2rem;
   display: flex;
 }
-
 .projectPicture {
   background-color: aliceblue;
   height: auto;
   width: 60%;
   margin: 1rem;
+  height: fit-content(1000px);
+  width: fit-content(1000px);
 }
-
 .projectInfo {
-  background-color: antiquewhite;
   height: auto;
   width: 40%;
   margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.technoIcon {
+  height: 50px;
+  width: auto;
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 777px) {
   .container {
     background-color: darkblue;
     display: grid;
@@ -78,39 +106,41 @@
     grid-template-columns: auto;
     grid-template-rows: 1fr 2fr;
   }
-  .iDPhoto {
-    background-color: yellow;
-    margin: 2rem;
+  .idContainer {
+    background-color: darkorange;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    justify-content: center;
   }
-  .info {
-    background-color: yellow;
+  .infos {
+    background-color: darkorange;
     margin: 1rem 2rem 2rem 2rem;
   }
-  .projectContainer {
+  #projectContainer {
     background-color: darkslategrey;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem 1rem;
+    float: right;
+    overflow: auto;
+    padding: 1rem;
   }
-
   .project {
     background-color: dodgerblue;
     height: auto;
     width: auto;
-    margin: 0 2rem;
     display: flex;
     flex-direction: column;
+    margin: 0;
   }
-  
   .projectPicture {
     background-color: aliceblue;
     height: 70%;
     width: auto;
     margin: 1rem;
   }
-  
   .projectInfo {
-    background-color: antiquewhite;
     height: 30%;
     width: auto;
     margin: 0 1rem 1rem 1rem;
