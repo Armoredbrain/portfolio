@@ -1,0 +1,118 @@
+:root {
+  font-size: 16px;
+  font-family: "Karla";
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-white: #000000;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 300ms;
+}
+
+.container {
+  background-color: darkblue;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 15rem auto;
+  height: 100vh;
+}
+
+.infoContainer {
+  background-color: darkorange;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+}
+
+.iDPhoto {
+  background-color: yellow;
+  margin: 3rem 2rem 2rem 2rem;
+}
+
+.info {
+  background-color: yellow;
+  margin: 2rem;
+}
+
+.projectContainer {
+  background-color: darkslategrey;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 2rem;
+  padding: 2rem 0;
+}
+
+.project {
+  background-color: dodgerblue;
+  height: 20rem;
+  width: auto;
+  margin: 0 2rem;
+  display: flex;
+}
+
+.projectPicture {
+  background-color: aliceblue;
+  height: auto;
+  width: 60%;
+  margin: 1rem;
+}
+
+.projectInfo {
+  background-color: antiquewhite;
+  height: auto;
+  width: 40%;
+  margin: 1rem;
+}
+
+@media screen and (min-width: 1100px) {
+  .container {
+    background-color: darkblue;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100vh;
+  }
+  .infoContainer {
+    background-color: darkorange;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 2fr;
+  }
+  .iDPhoto {
+    background-color: yellow;
+    margin: 2rem;
+  }
+  .info {
+    background-color: yellow;
+    margin: 1rem 2rem 2rem 2rem;
+  }
+  .projectContainer {
+    background-color: darkslategrey;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .project {
+    background-color: dodgerblue;
+    height: auto;
+    width: auto;
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .projectPicture {
+    background-color: aliceblue;
+    height: 70%;
+    width: auto;
+    margin: 1rem;
+  }
+  
+  .projectInfo {
+    background-color: antiquewhite;
+    height: 30%;
+    width: auto;
+    margin: 0 1rem 1rem 1rem;
+  }
+}
