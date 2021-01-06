@@ -1,29 +1,100 @@
-function abracadabra() {
+const data = [
+  {
+    src: './assets/rkg-info.png',
+    title: 'Rainbow Key Generator',
+    alt: 'Project Rainbow Key Generator',
+    icon: [
+      { src: './assets/node-js-brands.svg', alt: 'nodeJS' }
+    ],
+  },
+  {
+    src: './assets/nameMyHex.png',
+    title: 'Name my hex',
+    alt: 'Project name my hex',
+    icon: [
+      { src: './assets/php-brands.svg', alt: 'PHP' },
+    ],
+  },
+  {
+    src: './assets/wildBacteria.png',
+    title: 'Wild Bacteria Musical',
+    alt: 'Project wild bacteria musical',
+    icon: [
+      { src: './assets/php-brands.svg', alt: 'PHP' },
+      { src: './assets/react-brands.svg', alt: 'reactJs' },
+    ],
+  },
+  {
+    src: './assets/rps101.png',
+    title: 'Rock Paper Scissor 101',
+    alt: 'Project Rock Paper Scissor',
+    icon: [
+      { src: './assets/php-brands.svg', alt: 'PHP' },
+    ],
+  },
+  {
+    src: './assets/rahan.png',
+    title: 'Hackathon with Here Technology',
+    alt: 'Project Rahan',
+    icon: [
+      { src: './assets/react-brands.svg', alt: 'reactJs' },
+    ],
+  },
+  {
+    src: './assets/greenfood.png',
+    title: 'Green Food Label',
+    alt: 'Green Food Label',
+    icon: [
+      { src: './assets/php-brands.svg', alt: 'PHP' },
+    ],
+  },
+  {
+    src: './assets/pomodoro.png',
+    title: 'Pomodoro time tracker',
+    alt: 'Pomodoro',
+    icon: [
+      { src: './assets/html5-brands.svg', alt: 'HTML5' },
+      { src: './assets/css3-alt-brands.svg', alt: 'CSS3' },
+    ],
+  },
+]
+
+const numberOfProject = 4;
+
+function randomizeProjectDisplay() {
   let projectContainer = document.getElementById('projectContainer');
 
-  let data = {
-    src: ['./assets/rkg-info.png', './assets/nameMyHex.png'],
-    title: ['RKG', 'NMH'],
-    alt: ['Project: Rainbow Key Generator', 'Project: name my hex'],
+  let randomArray = [];
+  while(randomArray.length < numberOfProject){
+      let random = Math.floor(Math.random() * data.length);
+      if(randomArray.indexOf(random) === -1) randomArray.push(random);
   }
 
-  for (let i = 0; i < 4; i++) {
-    let random = Math.floor(Math.random() * Math.floor(2));
+  for (let i = 0; i < numberOfProject; i++) {
+      let project = document.createElement('div')
+      project.classList.add('project');
+      let template = `
+        <div class='projectPicture'>
+          <img alt='${data[randomArray[i]].alt}' src='${data[randomArray[i]].src}' />
+        </div>
+        <div class='projectInfo'>
+          <h4>${data[randomArray[i]].title}</h4>
+          <div class='stackIconContainer'>
+            ${addStackInfo(randomArray[i])}
+          </div>        
+        </div>
+    `;
 
-    let project = document.createElement('div');
-    project.classList.add('project');
-    projectContainer.append(project);
+      project.innerHTML = template;
+      projectContainer.append(project);
+    }
+}
+window.onload = randomizeProjectDisplay;
 
-    let projectPicture = document.createElement('div');
-    projectPicture.classList.add('projectPicture');
-    project.append(projectPicture);
-
-    let picture = document.createElement('img');
-    picture.setAttribute('src', data.src[random])
-    projectPicture.append(picture);
-
-    let projectInfo = document.createElement('div');
-    projectInfo.classList.add('projectInfo');
-    project.append(projectInfo);
-  }
+function addStackInfo(index) {
+  let stackIcons = ``;
+  data[index].icon.map((item) => {
+    stackIcons += `<img class='technoIcon' alt=${item.alt} src=${item.src} />`
+  })
+  return stackIcons;
 }
