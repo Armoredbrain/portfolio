@@ -6,6 +6,7 @@ const data = [
     icon: [
       { src: './assets/node-js-brands.svg', alt: 'nodeJS' }
     ],
+    repository: 'https://github.com/Armoredbrain/rainbowKeyGenerator',
   },
   {
     src: './assets/nameMyHex.png',
@@ -14,15 +15,17 @@ const data = [
     icon: [
       { src: './assets/php-brands.svg', alt: 'PHP' },
     ],
+    repository: 'https://github.com/Armoredbrain/nameMyHex',
   },
   {
-    src: './assets/wildBacteria.png',
+    src: './assets/wildbacteria.png',
     title: 'Wild Bacteria Musical',
     alt: 'Project wild bacteria musical',
     icon: [
       { src: './assets/php-brands.svg', alt: 'PHP' },
       { src: './assets/react-brands.svg', alt: 'reactJs' },
     ],
+    repository: 'https://github.com/Armoredbrain/wild-bacteria-front',
   },
   {
     src: './assets/rps101.png',
@@ -31,14 +34,7 @@ const data = [
     icon: [
       { src: './assets/php-brands.svg', alt: 'PHP' },
     ],
-  },
-  {
-    src: './assets/rahan.png',
-    title: 'Hackathon with Here Technology',
-    alt: 'Project Rahan',
-    icon: [
-      { src: './assets/react-brands.svg', alt: 'reactJs' },
-    ],
+    repository: 'https://github.com/Armoredbrain/rps101',
   },
   {
     src: './assets/greenfood.png',
@@ -46,7 +42,9 @@ const data = [
     alt: 'Green Food Label',
     icon: [
       { src: './assets/php-brands.svg', alt: 'PHP' },
+      { src: './assets/js-brands.svg', alt: 'JS' },
     ],
+    repository: 'https://github.com/Armoredbrain/greenfoodlabel',
   },
   {
     src: './assets/pomodoro.png',
@@ -55,9 +53,20 @@ const data = [
     icon: [
       { src: './assets/html5-brands.svg', alt: 'HTML5' },
       { src: './assets/css3-alt-brands.svg', alt: 'CSS3' },
+      { src: './assets/js-brands.svg', alt: 'JS' },
     ],
+    repository: 'https://github.com/Armoredbrain/pomodoroTab',
   },
 ]
+
+// {
+//   src: './assets/rahan.png',
+//   title: 'Hackathon with Here Technology',
+//   alt: 'Project Rahan',
+//   icon: [
+//     { src: './assets/react-brands.svg', alt: 'reactJs' },
+//   ],
+// },
 
 const numberOfProject = 4;
 
@@ -65,17 +74,18 @@ function randomizeProjectDisplay() {
   let projectContainer = document.getElementById('projectContainer');
 
   let randomArray = [];
-  while(randomArray.length < numberOfProject){
-      let random = Math.floor(Math.random() * data.length);
-      if(randomArray.indexOf(random) === -1) randomArray.push(random);
+  while (randomArray.length < numberOfProject) {
+    let random = Math.floor(Math.random() * data.length);
+    if (randomArray.indexOf(random) === -1) randomArray.push(random);
   }
 
   for (let i = 0; i < numberOfProject; i++) {
-      let project = document.createElement('div')
-      project.classList.add('project');
-      let template = `
+    let project = document.createElement('div')
+    project.classList.add('project');
+    let template = `
         <div class='projectPicture'>
           <img alt='${data[randomArray[i]].alt}' src='${data[randomArray[i]].src}' />
+          <a target='_blank' href='${data[randomArray[i]].repository}'><img class='githubLink' alt='Github repository' src='./assets/github-brands.svg' /></a>
         </div>
         <div class='projectInfo'>
           <h4>${data[randomArray[i]].title}</h4>
@@ -85,9 +95,9 @@ function randomizeProjectDisplay() {
         </div>
     `;
 
-      project.innerHTML = template;
-      projectContainer.append(project);
-    }
+    project.innerHTML = template;
+    projectContainer.append(project);
+  }
 }
 window.onload = randomizeProjectDisplay;
 
