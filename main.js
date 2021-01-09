@@ -108,3 +108,9 @@ function addStackInfo(index) {
   })
   return stackIcons;
 }
+
+function shuffleProject() {
+  let projectContainer = document.getElementById('projectContainer');
+  projectContainer.innerHTML = '';
+  randomizeProjectDisplay();
+}

@@ -51,10 +51,20 @@
   width: auto;
   margin: 1rem 0 0 1rem;
 }
-#downloadIcon, #githubIcon, #linkedInIcon {
+#downloadIcon, #githubIcon, #linkedInIcon  {
   height: 50px;
   width: auto;
   margin: 0 2.5rem 0 0;
+}
+#shuffleIcon {
+  height: 50px;
+  width: auto;
+  cursor: pointer;
+}
+.toolContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 0 0;
 }
 #projectContainer {
   display: grid;
