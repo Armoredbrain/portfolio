@@ -114,3 +114,7 @@ function shuffleProject() {
   projectContainer.innerHTML = '';
   randomizeProjectDisplay();
 }
+
+function toggleDayAndNight() {
+  document.documentElement.style();
+}
