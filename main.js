@@ -1,6 +1,10 @@
+// On load
+window.onload = randomizeProjectDisplay;
+document.documentElement.style.setProperty('--color-mode-poc', '#ffffff');
+
 const data = [
   {
-    src: './assets/rkg-info.png',
+    src: './assets/projects/rkg.png',
     title: 'Rainbow Key Generator',
     alt: 'Project Rainbow Key Generator',
     icon: [
@@ -9,7 +13,7 @@ const data = [
     repository: 'https://github.com/Armoredbrain/rainbowKeyGenerator',
   },
   {
-    src: './assets/nameMyHex.png',
+    src: './assets/projects/nameMyHex.png',
     title: 'Name my hex',
     alt: 'Project name my hex',
     icon: [
@@ -18,7 +22,7 @@ const data = [
     repository: 'https://github.com/Armoredbrain/nameMyHex',
   },
   {
-    src: './assets/wildbacteria.png',
+    src: './assets/projects/wildbacteria.png',
     title: 'Wild Bacteria Musical',
     alt: 'Project wild bacteria musical',
     icon: [
@@ -28,7 +32,7 @@ const data = [
     repository: 'https://github.com/Armoredbrain/wild-bacteria-front',
   },
   {
-    src: './assets/rps101.png',
+    src: './assets/projects/rps101.png',
     title: 'Rock Paper Scissor 101',
     alt: 'Project Rock Paper Scissor',
     icon: [
@@ -37,7 +41,7 @@ const data = [
     repository: 'https://github.com/Armoredbrain/rps101',
   },
   {
-    src: './assets/greenfood.png',
+    src: './assets/projects/greenfood.png',
     title: 'Green Food Label',
     alt: 'Green Food Label',
     icon: [
@@ -47,7 +51,7 @@ const data = [
     repository: 'https://github.com/Armoredbrain/greenfoodlabel',
   },
   {
-    src: './assets/pomodoro.png',
+    src: './assets/projects/pomodoro.png',
     title: 'Pomodoro time tracker',
     alt: 'Pomodoro',
     icon: [
@@ -59,16 +63,9 @@ const data = [
   },
 ]
 
-// {
-//   src: './assets/rahan.png',
-//   title: 'Hackathon with Here Technology',
-//   alt: 'Project Rahan',
-//   icon: [
-//     { src: './assets/react-brands.svg', alt: 'reactJs' },
-//   ],
-// },
-
 const numberOfProject = 4;
+const lightColor = '#E6E6E6';
+const nightColor = '#FFFFFF';
 
 function randomizeProjectDisplay() {
   let projectContainer = document.getElementById('projectContainer');
@@ -99,7 +96,6 @@ function randomizeProjectDisplay() {
     projectContainer.append(project);
   }
 }
-window.onload = randomizeProjectDisplay;
 
 function addStackInfo(index) {
   let stackIcons = ``;
@@ -116,5 +112,13 @@ function shuffleProject() {
 }
 
 function toggleDayAndNight() {
-  document.documentElement.style();
+  let color = getComputedStyle(document.documentElement).getPropertyValue('--color-mode-poc');
+  let colorModeIcon = document.getElementById('colorModeIcon');
+  if(color == '#ffffff') {
+    document.documentElement.style.setProperty('--color-mode-poc', '#000000');
+    colorModeIcon.setAttribute('src', './assets/lightbulb-solid.svg')
+  } else {
+    document.documentElement.style.setProperty('--color-mode-poc', '#ffffff');
+    colorModeIcon.setAttribute('src', './assets/lightbulb-regular.svg')
+  }
 }
