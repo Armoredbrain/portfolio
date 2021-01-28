@@ -1,3 +1,3 @@
 # PORTFOLIO
 
-![a link](./history/wipPortfolio.png)
+![a link](./history/portfolio.png)
