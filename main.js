@@ -63,7 +63,7 @@ const data = [
   },
 ]
 
-const numberOfProject = 4;
+const numberOfProject = 2;
 const lightColor = '#E6E6E6';
 const nightColor = '#FFFFFF';
 
