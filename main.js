@@ -63,7 +63,8 @@ const data = [
   },
 ]
 
-const numberOfProject = 2;
+let numberOfProject = 2;
+
 const lightColor = '#E6E6E6';
 const nightColor = '#FFFFFF';
 
@@ -114,7 +115,7 @@ function shuffleProject() {
 function toggleDayAndNight() {
   let color = getComputedStyle(document.documentElement).getPropertyValue('--color-mode-poc');
   let colorModeIcon = document.getElementById('colorModeIcon');
-  if(color == '#ffffff') {
+  if (color == '#ffffff') {
     document.documentElement.style.setProperty('--color-mode-poc', '#000000');
     colorModeIcon.setAttribute('src', './assets/lightbulb-solid.svg')
   } else {

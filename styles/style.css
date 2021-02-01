@@ -15,76 +15,95 @@
 
 .container {
   background-color: #E6E6E6;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto;
   height: 100vh;
-}
-.infoContainer {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: auto;
+  grid-template-columns: 15rem 3fr;
+  grid-template-rows: 100vh;
+}
+
+.infoContainer {
   padding: 0 0 1rem 0;
   margin: auto;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 2fr;
+  height: 100vh;
 }
+
 .idContainer {
   margin: 3rem 0 2rem 2rem;
-  display: flex;
-  justify-content: center;
   height: 200px;
   width: 150px;
-  margin: 3rem 0 3rem 3rem;
+  margin: 1rem auto 0 auto;
+  display: flex;
+  justify-content: center;
 }
+
 .infos {
-  margin: 3rem 2rem 1rem 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
+
 .namingContainer {
   display: flex;
   flex-direction: column;
   margin: 0 0 0 1rem;
+  margin: 2rem 0 0 0;
 }
+
 .infoIconContainer {
   display: flex;
   width: auto;
-  margin: 1rem 0 0 1rem;
+  margin: 0;
 }
+
 #downloadIcon, #githubIcon, #linkedInIcon {
   height: 50px;
   width: auto;
-  margin: 0 2.5rem 0 0;
+  margin: 1rem 1rem 0 1rem;
 }
+
 #shuffleIcon, #colorModeIcon {
   height: 50px;
   width: auto;
   cursor: pointer;
+  margin: 1rem 0 0 0;
 }
+
 .toolContainer {
   display: flex;
   justify-content: space-around;
-  margin: 2rem 0 0 0;
+  align-items: flex-end;
+  margin: 0;
 }
+
 #projectContainer {
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-row-gap: 2rem;
-  padding: 2rem 0;
+  grid-gap: 1rem;
+  overflow: auto;
+  padding: 1rem;
 }
+
 .project {
   background-color: #F5F5FA;
   display: flex;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  flex-direction: column;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
+
 .projectPicture {
   position: relative;
-  width: 60%;
-  margin: 1rem;
-  height: fit-content(1000px);
   width: fit-content(1000px);
+  height: 70%;
+  width: auto;
+  margin: 1rem;
 }
+
 .githubLink {
   height: 2rem;
   width: 2rem;
@@ -95,86 +114,30 @@
   padding: 0.1rem;
   border-radius: 50%;
 }
+
 .projectInfo {
-  height: auto;
-  width: 40%;
-  margin: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+  height: 30%;
+  width: auto;
+  margin: 0 1rem 1rem 1rem;
 }
+
 .technoIcon {
   height: 50px;
   width: auto;
   margin: 0 1rem 0 0;
 }
+
 .stackIconContainer {
   display: flex;
 }
 
-@media screen and (min-width: 845px) {
-  .container {
-    display: grid;
-    grid-template-columns: 15rem 3fr;
-    grid-template-rows: 100vh;
-  }
-  .infoContainer {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 1fr 2fr;
-    height: 100vh;
-  }
-  .idContainer {
-    margin: 1rem auto 0 auto;
-    display: flex;
-    justify-content: center;
-  }
-  .infos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .namingContainer {
-    margin: 2rem 0 0 0;
-  }
-  .infoIconContainer {
-    display: flex;
-    width: auto;
-    margin: 0;
-  }
-  #downloadIcon, #githubIcon, #linkedInIcon {
-    height: 50px;
-    width: auto;
-    margin: 1rem 1rem 0  1rem;
-  }
+@media screen and (max-width: 1020px) {
   #projectContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 1rem;
-    overflow: auto;
-    padding: 1rem;
-  }
-  .project {
-    flex-direction: column;
-  }
-  .projectPicture {
-    height: 70%;
-    width: auto;
-    margin: 1rem;
-    
-  }
-  .projectInfo {
-    height: 30%;
-    width: auto;
-    margin: 0 1rem 1rem 1rem;
-  }
-  .toolContainer {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    margin: 0;
   }
 }
