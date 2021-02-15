@@ -98,10 +98,13 @@
 
 .projectPicture {
   position: relative;
-  width: fit-content(1000px);
-  height: 70%;
-  width: auto;
-  margin: 1rem;
+}
+
+.projectPicture > img:first-child {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  z-index: auto;
 }
 
 .githubLink {

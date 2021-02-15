@@ -26,7 +26,7 @@ const data = [
     title: 'Wild Bacteria Musical',
     alt: 'Project wild bacteria musical',
     icon: [
-      { src: './assets/php-brands.svg', alt: 'PHP' },
+      { src: './assets/symfony-brands.svg', alt: 'Symfony' },
       { src: './assets/react-brands.svg', alt: 'reactJs' },
     ],
     repository: 'https://github.com/Armoredbrain/wild-bacteria-front',
@@ -45,7 +45,7 @@ const data = [
     title: 'Green Food Label',
     alt: 'Green Food Label',
     icon: [
-      { src: './assets/php-brands.svg', alt: 'PHP' },
+      { src: './assets/symfony-brands.svg', alt: 'Symfony' },
       { src: './assets/js-brands.svg', alt: 'JS' },
     ],
     repository: 'https://github.com/Armoredbrain/greenfoodlabel',
@@ -63,21 +63,24 @@ const data = [
   },
 ]
 
-let numberOfProject = 2;
+let numberOfProjectInDisplay = 2;
 
 const lightColor = '#E6E6E6';
 const nightColor = '#FFFFFF';
+let selectedProject = [];
 
 function randomizeProjectDisplay() {
   let projectContainer = document.getElementById('projectContainer');
 
   let randomArray = [];
-  while (randomArray.length < numberOfProject) {
+  while (randomArray.length < numberOfProjectInDisplay) {
     let random = Math.floor(Math.random() * data.length);
-    if (randomArray.indexOf(random) === -1) randomArray.push(random);
+    if (randomArray.indexOf(random) === -1 && !selectedProject.includes(random)) randomArray.push(random);
   }
 
-  for (let i = 0; i < numberOfProject; i++) {
+  selectedProject = randomArray;
+
+  for (let i = 0; i < numberOfProjectInDisplay; i++) {
     let project = document.createElement('div')
     project.classList.add('project');
     let template = `
@@ -112,14 +115,14 @@ function shuffleProject() {
   randomizeProjectDisplay();
 }
 
-function toggleDayAndNight() {
-  let color = getComputedStyle(document.documentElement).getPropertyValue('--color-mode-poc');
-  let colorModeIcon = document.getElementById('colorModeIcon');
-  if (color == '#ffffff') {
-    document.documentElement.style.setProperty('--color-mode-poc', '#000000');
-    colorModeIcon.setAttribute('src', './assets/lightbulb-solid.svg')
-  } else {
-    document.documentElement.style.setProperty('--color-mode-poc', '#ffffff');
-    colorModeIcon.setAttribute('src', './assets/lightbulb-regular.svg')
-  }
-}
+// function toggleDayAndNight() {
+//   let color = getComputedStyle(document.documentElement).getPropertyValue('--color-mode-poc');
+//   let colorModeIcon = document.getElementById('colorModeIcon');
+//   if (color == '#ffffff') {
+//     document.documentElement.style.setProperty('--color-mode-poc', '#000000');
+//     colorModeIcon.setAttribute('src', './assets/lightbulb-solid.svg')
+//   } else {
+//     document.documentElement.style.setProperty('--color-mode-poc', '#ffffff');
+//     colorModeIcon.setAttribute('src', './assets/lightbulb-regular.svg')
+//   }
+// }
