@@ -4,7 +4,7 @@ document.documentElement.style.setProperty('--color-mode-poc', '#ffffff');
 
 const data = [
   {
-    src: './assets/projects/rkg.png',
+    src: './assets/projects/rkg-small.jpg',
     title: 'Rainbow Key Generator',
     alt: 'Project Rainbow Key Generator',
     icon: [
@@ -13,7 +13,7 @@ const data = [
     repository: 'https://github.com/Armoredbrain/rainbowKeyGenerator',
   },
   {
-    src: './assets/projects/nameMyHex.png',
+    src: './assets/projects/nameMyHex-small.jpg',
     title: 'Name my hex',
     alt: 'Project name my hex',
     icon: [
@@ -22,7 +22,7 @@ const data = [
     repository: 'https://github.com/Armoredbrain/nameMyHex',
   },
   {
-    src: './assets/projects/wildbacteria.png',
+    src: './assets/projects/wildbacteria-small.jpg',
     title: 'Wild Bacteria Musical',
     alt: 'Project wild bacteria musical',
     icon: [
@@ -32,7 +32,7 @@ const data = [
     repository: 'https://github.com/Armoredbrain/wild-bacteria-front',
   },
   {
-    src: './assets/projects/rps101.png',
+    src: './assets/projects/rps101-small.jpg',
     title: 'Rock Paper Scissor 101',
     alt: 'Project Rock Paper Scissor',
     icon: [
@@ -41,7 +41,7 @@ const data = [
     repository: 'https://github.com/Armoredbrain/rps101',
   },
   {
-    src: './assets/projects/greenfood.png',
+    src: './assets/projects/greenfood-small.jpg',
     title: 'Green Food Label',
     alt: 'Green Food Label',
     icon: [
@@ -51,7 +51,7 @@ const data = [
     repository: 'https://github.com/Armoredbrain/greenfoodlabel',
   },
   {
-    src: './assets/projects/pomodoro.png',
+    src: './assets/projects/pomodoro-small.jpg',
     title: 'Pomodoro time tracker',
     alt: 'Pomodoro',
     icon: [
@@ -85,14 +85,14 @@ function randomizeProjectDisplay() {
     project.classList.add('project');
     let template = `
         <div class='projectPicture'>
-          <img alt='${data[randomArray[i]].alt}' src='${data[randomArray[i]].src}' />
+          <img alt='${data[randomArray[i]].alt}' src='${data[randomArray[i]].src}' loading="lazy"/>
           <a target='_blank' href='${data[randomArray[i]].repository}'><img class='githubLink' alt='Github repository' src='./assets/github-brands.svg' /></a>
         </div>
         <div class='projectInfo'>
           <h4>${data[randomArray[i]].title}</h4>
           <div class='stackIconContainer'>
             ${addStackInfo(randomArray[i])}
-          </div>        
+          </div>
         </div>
     `;
 
