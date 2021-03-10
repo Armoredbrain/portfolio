@@ -4,7 +4,7 @@
   --text-light: #000000;
   --text-night: #E6E6E6;
   --bg-light: #E6E6E6;
-  --bg-night: #000000;
+  --bg-night: #201f1f;
   --icon-light: #000000;
   --icon-night: #E6E6E6;
 }
@@ -14,7 +14,7 @@
 }
 
 .container {
-  background-color: #E6E6E6;
+  background-color: #201f1f;
   height: 100vh;
   display: grid;
   grid-template-columns: 15rem 3fr;
@@ -26,7 +26,7 @@
   margin: auto;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr;
   height: 100vh;
 }
 
@@ -42,7 +42,7 @@
 .infos {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin: 0 auto;
 }
@@ -52,6 +52,7 @@
   flex-direction: column;
   margin: 0 0 0 1rem;
   margin: 2rem 0 0 0;
+  color: #E6E6E6;
 }
 
 .infoIconContainer {

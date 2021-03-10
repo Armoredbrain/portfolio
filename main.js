@@ -86,7 +86,7 @@ function randomizeProjectDisplay() {
     let template = `
         <div class='projectPicture'>
           <img alt='${data[randomArray[i]].alt}' src='${data[randomArray[i]].src}' loading="lazy"/>
-          <a target='_blank' href='${data[randomArray[i]].repository}'><img class='githubLink' alt='Github repository' src='./assets/github-brands.svg' /></a>
+          <a target='_blank' href='${data[randomArray[i]].repository}'><img class='githubLink' alt='Github repository' src='./assets/github-brands-light.svg' /></a>
         </div>
         <div class='projectInfo'>
           <h4>${data[randomArray[i]].title}</h4>
@@ -125,4 +125,4 @@ function shuffleProject() {
 //     document.documentElement.style.setProperty('--color-mode-poc', '#ffffff');
 //     colorModeIcon.setAttribute('src', './assets/lightbulb-regular.svg')
 //   }
-// }
+//}
