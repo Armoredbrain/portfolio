@@ -85,7 +85,7 @@ function randomizeProjectDisplay() {
     project.classList.add('project');
     let template = `
         <div class='projectPicture'>
-          <img alt='${data[randomArray[i]].alt}' src='${data[randomArray[i]].src}' loading="lazy"/>
+          <img alt='${data[randomArray[i]].alt}' src='${data[randomArray[i]].src}' loading='lazy'/>
           <a target='_blank' href='${data[randomArray[i]].repository}'>
             <img class='githubLink' alt='Github repository' src='./assets/github-brands-light.svg' />
           </a>
